@@ -3,9 +3,9 @@ import os
 
 def main():
     target=input("Enter the target URL")
-    #sublister(target)
-    #amass(target)
-    crtndstry(target)
+    sublister(target)
+    amass(target)
+    #crtndstry(target)  //closing this due to invalid numeric literal error
     knock(target)
     subbrute(target)
 
@@ -16,7 +16,7 @@ def amass(target):
     subprocess.run(['amass','enum','-d',target,'|','tee','-a','amass.txt'])
 
 def crtndstry(target):
-    subprocess.Popen("cd crtndstry")
+    os.chdir('/crtndstry')
     subprocess.run(['./crtndstry.sh',target,'|','tee','-a','crtndstry.txt'])
 
 def knock(target):
@@ -29,7 +29,7 @@ def knock(target):
 def subbrute(target):
     domain_brute=input("Do you want to bruteforce subdomains using subrute(Y/N)")
     if(domain_brute=="Y"):
-        subprocess.run(['cd','subbrute/'])
+        os.chdir('subbrute/')
         subprocess.run(['python','subbrute.py',target,'-o','../subbrute.txt'])
 
     else:
