@@ -16,7 +16,7 @@ def sublister(target):
     subprocess.run(['sublist3r','-d',target,'-o','sublister.txt'])
 
 def amass(target):
-    subprocess.run(['amass','enum','-d',target,'|','-o','amass.txt'])
+    subprocess.run(['amass','enum','-d',target,'-o','amass.txt'])
 
 def crtndstry(target):
     os.chdir('/crtndstry')
