@@ -1,0 +1,9 @@
+Installing go lang for assetfinder
+
+https://golang.org/doc/install
+
+#copies the files to /usr/local
+tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
+
+#exports PATH to environment variable
+export PATH=$PATH:/usr/local/go/bin

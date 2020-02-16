@@ -11,6 +11,7 @@ def main():
     subbrute(target)
     crtsh(target)
     certspotter(target)
+    assetfinder(target)
 
 def sublister(target):
     subprocess.run(['sublist3r','-d',target,'-o','sublister.txt'])
@@ -36,6 +37,10 @@ def knock(target):
         subprocess.run(['knockpy','-c',target])
     else:
         pass
+
+def assetfinder(target):
+    command_assetfinder=r"assetfinder --subs-only "+target+" | tee -a assetfinder.txt"
+    os.system(command_assetfinder)
 
 def subbrute(target):
     domain_brute=input("Do you want to bruteforce subdomains using subrute(Y/N)")

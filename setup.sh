@@ -46,8 +46,13 @@ function subbrute {
 
 }
 
+function assetfinder{
+  go get -u github.com/tomnomnom/assetfinder
+}
+
 sublister
 amass
 crtndstry
 knockpy
 subbrute
+assetfinder
